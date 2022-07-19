@@ -26,8 +26,7 @@ class Sign{
             'activity_no' => $data['activity_no']??null,
             'benefit_amount' => $data['benefit_amount']??null,
             'extend' => $data['extend']??null,
-            'merch_extend_params ' => $data['merch_extend_params ']??null,
-
+            'merch_extend_params ' => $data['merch_extend_params ']??null
         ];
         return $signData;
     }
