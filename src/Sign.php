@@ -33,7 +33,7 @@ class Sign{
     public static function encrypt($data,$key,$type){
         $data = static::filter($data);
         $sign = static::getSignContent($data).'&key='.$key;
-        if($type == 'md5'){
+        if($type == 'MD5'){
             $sign = md5($sign);
         }
         return strtoupper($sign);
