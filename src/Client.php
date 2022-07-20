@@ -56,7 +56,7 @@ class Client
         $sign = md5($sign);
         return strtoupper($sign);
     }
-    public function data($data){
+    public function param($data){
         $this->data['sign'] = $this->sign($data);
         $this->data['product_code'] = $this->product_code;
         return array_merge($this->data,$data);
