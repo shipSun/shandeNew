@@ -15,15 +15,17 @@ class Client
     public $mer_no;
     public $mer_key;
     public $sign_type;
+    public $product_code;
 
     protected $data;
 
-    public function __construct($mer_no,$mer_key,$key,$sign_type="MD5")
+    public function __construct($mer_no,$mer_key,$key,$product_code,$sign_type="MD5")
     {
         $this->key = $key;
         $this->mer_no = $mer_no;
         $this->mer_key = $mer_key;
         $this->sign_type = $sign_type;
+        $this->product_code = $product_code;
     }
     protected function filter($data){
         $signData = [
@@ -55,6 +57,7 @@ class Client
         return strtoupper($sign);
     }
     public function data($data){
+        $this->data['product_code'] = $this->product_code;
         return array_merge($this->data,$data);
     }
     protected function getSignContent($params) {
