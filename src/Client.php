@@ -50,7 +50,7 @@ class Client
         $this->data = $signData;
         return $signData;
     }
-    public function sign($data){
+    protected function sign($data){
         $data = $this->filter($data);
         $sign = $this->getSignContent($data).'&key='.$this->key;
         $sign = md5($sign);
